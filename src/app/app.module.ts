@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -18,8 +19,10 @@ import { SharedModule } from './shared/shared.module'; // This is where our "dum
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+
     CoreModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

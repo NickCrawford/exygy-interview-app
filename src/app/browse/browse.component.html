@@ -14,9 +14,13 @@
         </span></div>
     </div>
     <div class="browse-stage">
-      <div class="browse-slat-set">
-        <app-slat-info routerLink="#" class="slat row align-middle collapse word" data-ref=""></app-slat-info>
-      </div>
+      <ul class="browse-slat-set">
+        <app-slat-info 
+          *ngFor="let document of documents"
+          routerLink="#"
+          class="slat row align-middle collapse word"
+          data-ref=""></app-slat-info>
+      </ul>
     </div>
   </div>
 </div>
