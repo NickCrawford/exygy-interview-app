@@ -14,7 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DocumentService {
-  private documentsUrl = 'http://exygy-challenge-backend.herokuapp.com/documents?search=&api_key=123';
+  private documentsUrl = 'http://exygy-challenge-backend.herokuapp.com/documents';
+  private apiKeyParam = `api_key=${123}`;
 
   constructor(
     private http: HttpClient,
@@ -22,7 +23,7 @@ export class DocumentService {
 
   /** GET document records from the server */
   getDocuments(): Observable<Document[]> {
-    return this.http.get<Document[]>(this.documentsUrl)
+    return this.http.get<Document[]>(`${this.documentsUrl}?${this.apiKeyParam}`)
       .pipe(
         // tap(documents => this.log(`fetched documents`)),
         catchError(this.handleError('getDocuments', []))
@@ -31,11 +32,18 @@ export class DocumentService {
 
   /** GET document by id. Will 404 if id not found */
   getDocument(id: number): Observable<Document> {
-    const url = `${this.documentsUrl}/${id}`;
+    const url = `${this.documentsUrl}/${id}?${this.apiKeyParam}`;
     return this.http.get<Document>(url).pipe(
       // tap(_ => this.log(`fetched document id=${id}`)),
       catchError(this.handleError<Document>(`getDocument id=${id}`))
     );
+  }
+
+  queryDocuments(queryString: string): Observable<Document[]> {
+    const url = `${this.documentsUrl}?search=${queryString}&${this.apiKeyParam}`;
+    return this.http.get<Document[]>(url).pipe(
+      catchError(this.handleError<Document>(`queryDocuments`))
+    )
   }
 
   /** PUT update the document on the server */
