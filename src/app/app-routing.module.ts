@@ -5,8 +5,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BrowseComponent } from './browse/browse.component';
 
 const routes: Routes = [
-  { path: 'homepage', component: HomepageComponent },
-  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
+  { path: '', component: HomepageComponent },
+  { path: 'home', redirectTo: '/', pathMatch: 'full' },
   { path: 'browse', component: BrowseComponent }
 ]
 
