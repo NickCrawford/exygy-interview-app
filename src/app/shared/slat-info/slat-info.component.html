@@ -9,7 +9,7 @@
   <div class="rows">
     <!-- slat-header -->
     <div class="columns small-12">
-      <h3 class="slat-header">List and description of investigators and sites - 234567 - 00000003548</h3>
+      <h3 class="slat-header">{{ document. name }}</h3>
     </div>
   </div>
 
@@ -17,8 +17,8 @@
     <!-- slat-title -->
     <div class="columns small-12">
       <p class="slat-title-wrapper">
-        <span class="slat-subtitle-prefix">Title:</span>
-        <span class="slat-subtitle-text">16.1.4 List of Investigators</span>
+        <span class="slat-subtitle-prefix">Title: </span>
+        <span class="slat-subtitle-text">{{ document.title }}</span>
       </p>
     </div>
   </div>
@@ -26,23 +26,23 @@
   <div class="row show-for-medium">
     <div class="columns small-12 medium-6">
       <p class="slat-attr-wrapper">
-        <span class="slat-attr-key">:</span>
-        <span class="slat-attr-value"></span>
+        <span class="slat-attr-key">Modified By: </span>
+        <span class="slat-attr-value">{{ document.modified_by }}</span>
       </p>
       <p class="slat-attr-wrapper">
-        <span class="slat-attr-key">:</span>
-        <span class="slat-attr-value"></span>
+        <span class="slat-attr-key">Last Modified: </span>
+        <span class="slat-attr-value">{{ document.updated_at | date:'dd/MM/yyyy' }}</span>
       </p>
     </div>
 
     <div class="columns small-12 medium-6">
       <p class="slat-attr-wrapper">
-        <span class="slat-attr-key">:</span>
-        <span class="slat-attr-value"></span>
+        <span class="slat-attr-key">Status: </span>
+        <span class="slat-attr-value">{{ document.status | titlecase }}</span>
       </p>
       <p class="slat-attr-wrapper">
-        <span class="slat-attr-key">:</span>
-        <span class="slat-attr-value"></span>
+        <span class="slat-attr-key">Country: </span>
+        <span class="slat-attr-value">{{ document.country }}</span>
       </p>
     </div>
   </div>

@@ -22,6 +22,7 @@
       <ul class="browse-slat-set">
         <app-slat-info
           *ngFor="let document of documents$ | async"
+          [document]="document"
           routerLink="#"
           class="slat row align-middle collapse word"
           data-ref=""></app-slat-info>

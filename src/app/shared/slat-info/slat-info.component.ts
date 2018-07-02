@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-slat-info',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slat-info.component.scss']
 })
 export class SlatInfoComponent implements OnInit {
+
+  @Input() document: Document;
 
   constructor() { }
 
