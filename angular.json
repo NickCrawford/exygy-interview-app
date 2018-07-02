@@ -22,14 +22,9 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "../frontend-challenge-pattern-library/src/assets" // Import our pattern library assets here
-              ]
-            },
             "styles": [
               "src/styles.scss",
-              "../frontend-challenge-pattern-library/src/assets/toolkit/styles/toolkit.scss" // Import our pattern library here
+              "../frontend-challenge-pattern-library/dist/assets/toolkit/styles/toolkit.css" // Import our pattern library here
             ],
             "scripts": []
           },
