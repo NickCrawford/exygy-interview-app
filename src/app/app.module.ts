@@ -6,15 +6,18 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { BrowseComponent } from './browse/browse.component';
 import { AppRoutingModule } from './/app-routing.module';
 
+import { CoreModule } from './core/core.module'; // Where our reusable components live
+
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    BrowseComponent
+    BrowseComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
