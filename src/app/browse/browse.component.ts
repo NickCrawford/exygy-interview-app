@@ -15,12 +15,18 @@ import { DocumentService } from '../document.service';
 export class BrowseComponent implements OnInit {
   documents$: Observable<Document[]>;
   private searchTerms = new Subject<string>();
+  searchString = '';
  
   constructor(private documentService: DocumentService) {}
  
   // Push a search term into the observable stream.
   search(term: string): void {
     this.searchTerms.next(term);
+  }
+
+  clearSearch(): void {
+    this.searchString = '';
+    this.search('');
   }
  
   ngOnInit(): void {

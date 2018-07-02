@@ -8,11 +8,12 @@
           </svg>
         </span>
         <input
+        [(ngModel)]="searchString"
         (keyup)="search(searchBox.value)"
         #searchBox
         type="text" id="search-box"
         class="search-box" placeholder="" />
-        <span class="ui-icon i-medium-gray i-base search-box-close-icon">
+        <span (click)="clearSearch()" class="ui-icon i-medium-gray i-base search-box-close-icon">
           <svg>
             <use xlink:href="#i-close-large" />
           </svg>
