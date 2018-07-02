@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "../frontend-challenge-pattern-library/dist/assets/toolkit/styles/toolkit.css" // Import our pattern library here
+              "../frontend-challenge-pattern-library/dist/assets/toolkit/styles/toolkit.css",
             ],
             "scripts": []
           },
