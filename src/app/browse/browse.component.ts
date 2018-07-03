@@ -4,8 +4,8 @@ import { Observable, Subject } from 'rxjs';
  
 import { debounceTime, distinctUntilChanged, switchMap, startWith } from 'rxjs/operators';
  
-import { Document } from '../document';
-import { DocumentService } from '../document.service';
+import { Document } from '../_models';
+import { DocumentService } from '../_services';
  
 @Component({
   selector: 'app-browse',

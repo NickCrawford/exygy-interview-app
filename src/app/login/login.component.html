@@ -15,11 +15,11 @@
             </h2>
           </div>
 
-          <form class="login-box-form">
-            <input class="login-box-form-username" type="text" placeholder="Username" required/>
-            <input class="login-box-form-password" type="password" placeholder="Password" required/>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-box-form">
+            <input class="login-box-form-username" formControlName="email" type="text" placeholder="Username" autocomplete="email" required/>
+            <input class="login-box-form-password" formControlName="password" type="password" placeholder="Password" required/>
 
-            <button class="button login-box-form-submit disabled bg-darkest-blue" data-open="" type="submit">
+            <button class="button login-box-form-submit bg-darkest-blue" [ngClass]="{ 'disabled': false }" data-open="" type="submit">
               Sign In
             </button></form>
           </div>
