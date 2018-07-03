@@ -37,9 +37,9 @@
         </li>
         <li>
           <a routerLink="/profile" class="nav-bar-avatar">
-            <span class="avatar-initials ">
-              <span class="avatar-initials-text">
-                AK
+            <span class="avatar-initials">
+              <span *ngIf="currentUser | async; let user" class="avatar-initials-text">
+                {{ user.first_name | slice:0:1 }}{{ user.last_name | slice:0:1 }}
               </span>
             </span>
           </a>

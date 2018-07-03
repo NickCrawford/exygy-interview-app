@@ -2,7 +2,6 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-
 import { throwIfAlreadyLoaded } from './module-import-guard';
 
 import { HeaderBarComponent } from './header-bar/header-bar.component';
@@ -10,7 +9,7 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule
   ],
   exports: [
     HeaderBarComponent,

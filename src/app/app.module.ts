@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { LoginComponent } from './login/login.component'; // This is where our "dumb" reusable components live. Typically come from the pattern library
 
+import { UserService } from './_services';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { LoginComponent } from './login/login.component'; // This is where our "
     CoreModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
