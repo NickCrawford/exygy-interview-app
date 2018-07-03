@@ -42,7 +42,7 @@ export class DocumentService {
   queryDocuments(queryString: string): Observable<Document[]> {
     const url = `${this.documentsUrl}?search=${queryString}&${this.apiKeyParam}`;
     return this.http.get<Document[]>(url).pipe(
-      catchError(this.handleError<Document>(`queryDocuments`))
+      catchError(this.handleError<Document[]>(`queryDocuments`))
     )
   }
 
