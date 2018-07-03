@@ -35,15 +35,22 @@
              </svg>
            </span> </a>
         </li>
-        <li>
+        <li *ngIf="currentUser | async; let user; else login">
           <a routerLink="/profile" class="nav-bar-avatar">
             <span class="avatar-initials">
-              <span *ngIf="currentUser | async; let user" class="avatar-initials-text">
+              <span class="avatar-initials-text">
                 {{ user.first_name | slice:0:1 }}{{ user.last_name | slice:0:1 }}
               </span>
             </span>
           </a>
         </li>
+        <ng-template #login>
+          <li>
+            <a routerLink="/login" class="nav-bar c-white">
+              Login
+            </a>
+          </li>
+        </ng-template>
         <li>
           <a routerLink="" class="nav-mobile-toggler">
             <span class="ui-icon i-primary i-medium icon-open">
