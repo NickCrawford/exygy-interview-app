@@ -14,7 +14,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DocumentService {
-  private documentsUrl = 'http://exygy-challenge-backend.herokuapp.com/documents';
+  private documentsUrl = 'http://exygy-challenge-backend.herokuapp.com/documents'; // Ideally we would keep this in a seperate config file hidden on the server
   private apiKeyParam = `api_key=${123}`;
 
   constructor(

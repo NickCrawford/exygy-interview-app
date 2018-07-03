@@ -16,10 +16,21 @@
           </div>
 
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-box-form">
-            <input class="login-box-form-username" formControlName="email" type="text" placeholder="Username" autocomplete="email" required/>
-            <input class="login-box-form-password" formControlName="password" type="password" placeholder="Password" required/>
+            <input class="login-box-form-username" [ngClass]="{ 'c-alert': submitted && f.email.errors }" formControlName="email" type="text" placeholder="Username" autocomplete="email" required/>
 
-            <button class="button login-box-form-submit bg-darkest-blue" [ngClass]="{ 'disabled': false }" data-open="" type="submit">
+            <input class="login-box-form-password" [ngClass]="{ 'c-alert': submitted && f.password.errors }" formControlName="password" type="password" placeholder="Password" required/>
+            <div *ngIf="submitted && f.email.errors" class="c-alert">
+              <h6 *ngIf="f.email.errors.required">Email is required</h6>
+            </div>
+            <div *ngIf="submitted && f.password.errors" class="c-alert">
+              <h6 *ngIf="f.password.errors.required">Password is required</h6>
+            </div>
+
+            <div *ngIf="submitted && errorMessage" class="c-alert">
+              {{ errorMessage }}
+            </div>
+
+            <button class="button login-box-form-submit bg-darkest-blue" [ngClass]="{ 'disabled': f.email.errors || f.password.errors }" data-open="" type="submit">
               Sign In
             </button></form>
           </div>

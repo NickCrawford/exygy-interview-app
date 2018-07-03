@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    errorMessage: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
     get f() { return this.loginForm.controls; }
 
     onSubmit() {
+        this.errorMessage = '';
         this.submitted = true;
 
         // stop here if form is invalid
@@ -54,6 +56,10 @@ export class LoginComponent implements OnInit {
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
+                    console.log('errpr', error)
+                    if (error.status === 422) this.errorMessage = 'The username or password you provided is incorrect.';
+                    else this.errorMessage = 'There was an issue logging you in. Please try again in a bit';
+
                     this.loading = false;
                 });
     }

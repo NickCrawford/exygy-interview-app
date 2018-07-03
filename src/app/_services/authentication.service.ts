@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthenticationService {
-    private authUrl = 'http://exygy-challenge-backend.herokuapp.com/users/login';
+    private authUrl = 'http://exygy-challenge-backend.herokuapp.com/users/login'; // Ideally we would keep this in a seperate config file hidden on the server
 
     constructor(private http: HttpClient) { }
 
