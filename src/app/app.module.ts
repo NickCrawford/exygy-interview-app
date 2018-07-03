@@ -11,7 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module'; // Where our core components live that are used once. Header Bar, footer, etc
 import { SharedModule } from './shared/shared.module';
 import { ProfileComponent } from './profile/profile.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component'; // This is where our "dumb" reusable components live. Typically come from the pattern library
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { LoginComponent } from './login/login.component'; // This is where our "dumb" reusable components live. Typically come from the pattern library
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component'; //
     BrowseComponent,
     ProfileComponent,
     EditProfileComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
